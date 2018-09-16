@@ -1,0 +1,30 @@
+.b7-parallax-scroll-container {
+	--b7-parallax-camera-distance: 10;
+	--b7-parallax-layer-distance: 0;
+
+	perspective: calc(1cm * var(--b7-parallax-camera-distance));
+	perspective-origin: center center;
+	transform-style: preserve-3d;
+}
+
+.b7-parallax {
+	display: block;
+	height: 200px;
+	position: relative;
+	overflow: hidden;
+}
+
+.b7-parallax > * {
+	position: absolute;
+	background: none;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	--scale: calc(1 - calc(var(--b7-parallax-layer-distance)) / var(--b7-parallax-camera-distance));
+	--z-depth: calc(1cm * var(--b7-parallax-layer-distance));
+	transform: translateZ(var(--z-depth)) scale(var(--scale));
+}

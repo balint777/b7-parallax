@@ -1,0 +1,5 @@
+{
+  "name": "b7-parallax",
+  "description": "A visually correct parallax implementation that models the perspective and distance of the layers.",
+  "main": "b7-parallax.js"
+}
